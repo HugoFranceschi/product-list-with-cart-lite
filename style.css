@@ -14,13 +14,13 @@ main {
 	grid-template-rows: 1fr 0.025fr;
 }
 
-.Box {
+.cadre {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(9, 1fr);
 }
 
-.Box > button {
+.cadre > .box {
 	border: 0;
 	background: none;
 	display: flex;
@@ -46,7 +46,7 @@ main {
 	margin: 0;
 }
 
-button > img {
+.box > img {
 	height: 30vh;
 	width: 100%;
 	border-radius: 15px;
@@ -54,12 +54,13 @@ button > img {
 	transition: 1s;
 }
 
-button {
+.box {
 	border-radius: 15px;
 	transition: 0.25s;
+	position: relative;
 }
 
-button:hover {
+.box:hover {
 	box-shadow: 0px 30px 75px 0px rgba(0, 0, 0, 0.75);
 	-webkit-box-shadow: 0px 30px 75px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 0px 30px 75px 0px rgba(0, 0, 0, 0.75);
@@ -83,14 +84,72 @@ button:hover {
 	align-items: center;
 }
 
-button > .center {
+.box > .center {
 	width: 100%;
 }
 
+.acheter {
+	display: flex;
+	width: 33%;
+	border-radius: 25px;
+	justify-content: space-evenly;
+	position: absolute;
+	bottom: 31%;
+	left: 33%;
+	border: solid 1px rgba(173, 138, 133, 1);
+	background-color: white;
+}
+.acheter:hover {
+	color: rgba(199, 59, 15, 1);
+	border: solid 1px rgba(199, 59, 15, 1);
+}
+.acheter > p {
+	font-weight: 700;
+}
+.acheter > p:hover {
+	color: rgba(199, 59, 15, 1);
+}
+.nombre {
+	position: absolute;
+	bottom: 32%;
+	left: 33%;
+	width: 30%;
+	background-color: rgba(199, 59, 15, 1);
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 0;
+	border-radius: 25px;
+	color: white;
+}
+.choix {
+	color: white;
+	border: solid 1px white;
+	background-color: transparent;
+	border-radius: 50px;
+}
+.pading {
+	padding-left: 7px;
+	padding-right: 7px;
+}
+.choix:hover {
+	background-color: white;
+	color: rgba(199, 59, 15, 1);
+}
+
 @media screen and (min-width: 700px) {
-	.Box {
+	.cadre {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(3, 1fr);
+	}
+	.acheter {
+		width: 50%;
+		bottom: 37%;
+		left: 27%;
+	}
+	.nombre {
+		bottom: 37%;
+		left: 29%;
+		width: 44%;
 	}
 }
 
@@ -104,4 +163,17 @@ button > .center {
 	.Cart {
 		height: 30%;
 	}
+	.acheter {
+		width: 50%;
+		bottom: 36%;
+		left: 27%;
+	}
+	.nombre {
+		left: 22%;
+		width: 58%;
+	}
+}
+
+.none {
+	display: none;
 }
